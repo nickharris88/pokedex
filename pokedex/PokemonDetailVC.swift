@@ -16,16 +16,16 @@ class PokemonDetailVC: UIViewController {
     var pokemon: Pokemon!
     override func viewDidLoad() {
         super.viewDidLoad()
-nameLbl.text = pokemon.name.capitalized
+        nameLbl.text = pokemon.name.capitalized
         
         let img = UIImage(named: "\(pokemon.pokedexId)")
-mainImg.image = img
+        mainImg.image = img
         currentEvoImg.image = img
         pokedexLbl.text = "\(pokemon.pokedexId)"
         pokedexLbl.isHidden = false
         pokemon.downloadPokemonDetails {
             
-        
+            
             //called when network call complete
             self.updateUI()
         }
@@ -33,7 +33,7 @@ mainImg.image = img
     }
     
     func updateUI(){
-       attackLbl.text = pokemon.attack
+        attackLbl.text = pokemon.attack
         attackLbl.isHidden = false
         
         defenceLbl.text = pokemon.defence
@@ -56,9 +56,9 @@ mainImg.image = img
         }
         
     }
-
+    
     @IBOutlet weak var nameLbl: UILabel!
-  
+    
     @IBOutlet weak var mainImg: UIImageView!
     
     @IBOutlet weak var dsecrptionLbl: UILabel!
